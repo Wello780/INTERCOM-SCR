@@ -1,0 +1,494 @@
+if getgenv().Intercom then return end 
+
+local HttpService = game:GetService("HttpService")
+local fileName = "INTERCOM/SETTINGS/" .. game.PlaceId .. '.txt'
+getgenv().settings = {}
+getgenv().jayyware = true
+
+if isfile("INTERCOM/SETTINGS/" .. game.PlaceId .. '.txt') then
+    local sl, er = pcall(function()
+        getgenv().settings = game:GetService('HttpService'):JSONDecode(readfile("INTERCOM/SETTINGS/" .. game.PlaceId .. '.txt'))
+    end)
+    if er ~= nil then
+        forceServerHop()
+        return
+    end
+end 
+
+writefile("INTERCOM/SETTINGS/" .. game.PlaceId .. '.txt', HttpService:JSONEncode(getgenv().settings))
+
+function forceServerHop()
+    local Api = "https://games.roblox.com/v1/games/"
+    local placeId, jobId = game.PlaceId, game.JobId
+    local serversUrl = Api .. placeId .. "/servers/Public?sortOrder=Desc&limit=100"
+
+    local function ListServers(cursor)
+        local raw = game:HttpGet(serversUrl .. (cursor and "&cursor=" .. cursor or ""))
+        return HttpService:JSONDecode(raw)
+    end
+
+    local nextCursor
+    repeat
+        local serversData = ListServers(nextCursor)
+        for _, server in ipairs(serversData.data) do
+            if server.playing < server.maxPlayers and server.id ~= jobId then
+                local success, result = pcall(TeleportService.TeleportToPlaceInstance, TeleportService, placeId, server.id, LocalPlayer)
+                if success then
+                    break
+                end
+            end
+        end
+        nextCursor = serversData.nextPageCursor
+    until not nextCursor
+end
+
+local myEvent = Instance.new("BindableEvent")
+local connection = myEvent.Event:Connect(function()
+end)
+
+local function createLoop(callback)
+    return spawn(function()
+        while task.wait() do
+            if connection.Connected == true then
+                local success, result = pcall(function() 
+                    callback()
+                end)
+            end
+        end
+    end)
+end
+
+createLoop(function()
+    for key, value in pairs(getgenv().settings) do
+	if connection.Connected == true and getgenv().settings.AutoSave == true then 
+        getgenv().settings[key] = value
+        writefile(fileName, HttpService:JSONEncode(getgenv().settings))
+		end
+    end
+end)
+
+local Fluent = loadstring(game:HttpGet("https://github.com/reed192512/INTERCOM-SCR/releases/download/Intercom/Intercom.txt"))()
+local InterfaceManager =
+loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/Intercom/InterfaceManager"))()
+local SaveManager = 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/SaveManager"))()
+--[[ 
+   premium = true
+]]
+
+local Window = Fluent:CreateWindow({
+    Title = "Intercom", "",
+    SubTitle = "Where the fun begins. Powered By Intercom Softworks LLC. All Rights Reserved©️",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true,
+    Theme = "Light",
+})
+
+local Tabs = {
+    Main = Window:AddTab({
+        Title = "Main",
+        Icon = "rbxassetid://10723424505"
+    }),
+    Scripts = Window:AddTab({
+        Title = "Scripts",
+        Icon = "rbxassetid://10723424505"
+    }),
+  Scripts2 = Window:AddTab({
+        Title = "Scripts2 ",
+        Icon = "rbxassetid://10723424505"
+    }),
+  Scripts3 = Window:AddTab({
+        Title = "Scripts3",
+        Icon = "rbxassetid://10723424505"
+    }),
+  Scripts4 = Window:AddTab({
+        Title = "Scripts4",
+        Icon = "rbxassetid://10723424505"
+    }),
+  Report = Window:AddTab ({
+      Title = "Report",
+      Icon = "rbxassetid://10723424505"
+   }),
+  JayyAd = Window:AddTab ({
+      Title = "Intercom",
+      Icon = "rbxassetid://10723424505"
+   }),
+    Settings = Window:AddTab({
+        Title = "Settings ",
+        Icon = "settings"
+    }),
+        Premium = premium == "premium" and Window:AddTab({
+        Title = "Premium",
+        Icon = "rbxassetid://10709819149"
+    }),
+
+}
+
+Tabs.Main:AddParagraph({
+    Title = "Version",
+    Content = "V.4.7.9"
+})
+
+Tabs.Main:AddParagraph({
+    Title = "Intercom",
+    Content = "Welcome to Intercom!\n\nWe're excited to introduce our new script hub to the server and we will be happy if u use it thank you for using.\n\nOur dedicated team is working diligently to make this script a reality. While it's ready , we're finding more scripts.\n\nStay tuned for updates, and thank you for your patience and support! https://discord.gg/BYcahVvKHP"
+})
+
+Tabs.Main:AddParagraph({
+    Title = "Added",
+    Content = "Nothing"
+})
+
+Tabs.Main:AddParagraph({
+    Title = "Removed",
+    Content = "Nothing"
+})
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Fly Script",
+    Callback = function()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()  
+   end
+})  
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Inf Yeild",
+    Callback = function()        
+ loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Infinite-Yeild-4388", true))()  
+    end
+})  
+
+local Button =
+
+Tabs.Scripts:AddButton({
+    Title = "Blade Ball Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()    
+    end
+})  
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Slap Battles Script",
+    Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()    
+    end
+})  
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Bee Swarm Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/kocmoc-remastered.lua", true))()   
+    end
+})
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Bedwars Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()    
+    end
+}) 
+
+local Button =
+Tabs.Scripts:AddButton({
+    Title = "Murder Mystery Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Murder-Mystery-2-Very-op-very-good-stuff-open-source-7606", true))()  
+    end
+})  
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Tower of Hell Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Tower-of-Hell-Hax-5597", true))()   
+    end
+}) 
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Blox Fruits Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/UPDATE-16-Blox-Fruits-Mango-Hub-6540", true))()
+    end
+})  
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Restaurant Tycoon Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/CHAOS-UPDATE-Zeld-Hub-7614", true))()        
+    end
+})  
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "BrookHaven Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Ice-Hub-6414", true))()
+    end
+}) 
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Da Hood Get 1m Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/storage/main/DHcodefarm.lua"))()  
+    end
+})  
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Funky Friday Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadir3709/RandomScript/main/FunkyFridayMobile"))()    
+    end
+})  
+
+local Button =
+Tabs.Scripts2:AddButton({
+    Title = "Blade Ball Script2",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/SourceLua/main/Blade_Ball.lua"))()    
+    end
+})  
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Sharkbite 2 Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JerrymiahPM/SharkRipper/main/main.lua"))()   
+    end
+})  
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Piano Auto Player",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Madness676/3.2Lol/main/AutoPiano3-2.lua", true))()
+    end
+})  
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Sky Wars Script (Coming Soon!)",
+    Callback = function()
+           
+    end
+}) 
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Break in 2 Script",
+    Callback = function()
+      loadstring(game:HttpGet("https://freenote.biz/raw/80jXm2Q0a7",true))()
+    end
+})   
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Natural Disaster Survival Script",
+    Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+    end
+})   
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Natural Disaster Survival Script (Balloon Client Sided)",
+    Callback = function()
+      local function createNotif(title,text,icon,duration)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = title; 
+		Text = text;
+		Icon = icon; 
+		Duration = duration; 
+	})
+      end 
+if game.Workspace:FindFirstChild("GreenBalloon", true) then -- Check for stealable GreenBalloon 
+	balloonClone = game.Workspace:FindFirstChild("GreenBalloon", true):Clone() -- clone it 
+	balloonClone.Parent = game:GetService("Players").LocalPlayer.Backpack
+	createNotif("garfield","🎈 balloon succesfully stolen!",nil,"5")
+else 
+	createNotif("garfield","🎈 there is no balloons.",nil,"5")
+end 
+
+    end
+})   
+
+local Button =
+Tabs.Scripts3:AddButton({
+    Title = "Speed Run 4 Script",
+    Callback = function() loadstring(game:HttpGet("https://roflux.net/scripts/games/" .. tostring(game.PlaceId) .. ".lua"))()
+    end
+})
+
+local Button =
+Tabs.Scripts4:AddButton({
+    Title = "Kat Script",
+    Callback = function() 
+      
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AndrewDarkyy/NOWAY/main/darkyyware.lua"))()
+    end
+})
+
+local Button =
+Tabs.Scripts4:AddButton({
+    Title = "Big Paintball Script",
+    Callback = function() 
+        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AndrewDarkyy/NOWAY/main/darkyyware.lua"))()
+    end
+})
+
+local KeyBindName = getgenv().settings.KeyBind or ""
+
+
+local Keybind = Tabs.Settings:AddKeybind("Keybind", {
+    Title = "KeyBind",
+    Mode = "Toggle",
+    Default = KeyBindName,
+    ChangedCallback = function(New)
+        KeyBindName = New.Name
+        getgenv().settings.KeyBind = New.Name  
+    end
+})
+
+local Button =
+Tabs.Settings:AddButton({
+    Title = "Fps Booster",
+    Callback = function() 
+        _G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true-- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://pastebin.com/raw/Wd75Z6GV"))()
+    end
+})
+
+local Paragraph =
+Tabs.JayyAd:AddParagraph({
+    Title = "INTERCOM ADMIN ",
+    Content = "If your seeing this Hello from Intercom Softworks LLC"
+ })
+
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+    local settingsKeyBind = getgenv().settings.KeyBind
+
+    if input.KeyCode == Enum.KeyCode.Home or settingsKeyBind == input.KeyCode.Name then
+        if game:GetService("CoreGui").ScreenGui.Frame.Visible then
+            Fluent:Notify({Title = 'Window Minimized', Content = 'Press ' .. settingsKeyBind .. ' to Open the UI', Duration = 5 })
+        end
+        Window:Minimize() 
+    end
+end)
+
+local Toggle = Tabs.Settings:AddToggle("Toggle", {
+    Title = "Auto Save Settings",
+    Default = getgenv().settings.AutoSave,
+    Callback = function(value)
+        getgenv().settings.AutoSave = value
+        writefile(fileName, HttpService:JSONEncode(getgenv().settings))
+    end
+})
+
+local Toggle = Tabs.Settings:AddToggle("Toggle", {
+    Title = "Auto ReExecute",
+    Default = getgenv().settings.AutoExecute,
+    Callback = function(value)
+    getgenv().settings.AutoExecute = value
+     if getgenv().settings.AutoExecute then
+            local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+            if queueteleport then
+                queueteleport('loadstring(game:HttpGet("https://pastebin.com/raw/7hDvLt1b"))()')
+            end
+        end
+    end
+})
+
+local Toggle = Tabs.Settings:AddToggle("Toggle", {
+   Title = "Auto Rejoin",
+   Default = getgenv().settings.AutoRejoin,
+   Callback = function(value)
+      getgenv().settings.AutoRejoin = value
+      if getgenv().settings.AutoRejoin then
+          Fluent:Notify({Title = 'Auto Rejoin', Content = 'You will rejoin if you are kicked or disconnected from the game', Duration = 5 })
+          repeat task.wait() until game.CoreGui:FindFirstChild('RobloxPromptGui')
+          local lp,po,ts = game:GetService('Players').LocalPlayer,game.CoreGui.RobloxPromptGui.promptOverlay,game:GetService('TeleportService')
+          po.ChildAdded:connect(function(a)
+              if a.Name == 'ErrorPrompt' then
+                  while true do
+                      ts:Teleport(game.PlaceId)
+                      task.wait(2)
+                  end
+              end
+          end)
+      end
+  end
+})
+
+Tabs.Settings:AddButton({
+    Title = "Rejoin-Server",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, Player)
+    end
+})
+
+Tabs.Settings:AddButton({
+    Title = "Server-Hop", 
+    Callback = function()
+       local Http = game:GetService("HttpService")
+        local TPS = game:GetService("TeleportService")
+        local Api = "https://games.roblox.com/v1/games/"
+        local _place,_id = game.PlaceId, game.JobId
+        local _servers = Api.._place.."/servers/Public?sortOrder=Desc&limit=100"
+        local function ListServers(cursor)
+            local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+            return Http:JSONDecode(Raw)
+        end
+        local Next; repeat
+            local Servers = ListServers(Next)
+            for i,v in next, Servers.data do
+                if v.playing < v.maxPlayers and v.id ~= _id then
+                    local s,r = pcall(TPS.TeleportToPlaceInstance,TPS,_place,v.id,Player)
+                    if s then break end
+                end
+            end
+            Next = Servers.nextPageCursor
+        until not Next
+    end
+})
+
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:SetIgnoreIndexes({})
+SaveManager:IgnoreThemeSettings()
+InterfaceManager:SetFolder("INTERCOM")
+SaveManager:SetFolder("INTERCOM")
+
+Window:SelectTab(1)
