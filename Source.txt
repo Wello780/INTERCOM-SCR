@@ -633,7 +633,7 @@
  end)
  
  cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/ScriptHub"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/Scripthub"))()
  end)
  
  cmd.add({"stand"}, {"stand <player>", "Makes a player your stand"}, function(...)
