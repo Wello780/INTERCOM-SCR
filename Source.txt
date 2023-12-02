@@ -634,6 +634,14 @@
  
  cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/ScriptHub"))()
+ wait();
+ 
+ Notify({
+ Description = "Hat orbit loaded, if you wanna orbit other people type in the chat .orbit playername";
+ Title = "Intercom Admin";
+ Duration = 10;
+ 
+ });
  end)
  
  cmd.add({"stand"}, {"stand <player>", "Makes a player your stand"}, function(...)
