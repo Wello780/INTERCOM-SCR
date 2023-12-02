@@ -637,7 +637,7 @@
  wait();
  
  Notify({
- Description = "Hat orbit loaded, if you wanna orbit other people type in the chat .orbit playername";
+ Description = "Luanched scripthub";
  Title = "Intercom Admin";
  Duration = 10;
  
