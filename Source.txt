@@ -633,7 +633,7 @@
  end)
  
  cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/Launcher.txt"))()
+ loadstring(game:HttpGet("https://gist.githubusercontent.com/reed192512/2b513636deaf78c35c76217b9cf187c2/raw/36e98f2ce84798e3a79e87c5fc0228a0c2111bec/gistfile1.txt"))()
  wait();
  
  Notify({
