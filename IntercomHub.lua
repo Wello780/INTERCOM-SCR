@@ -633,7 +633,7 @@ do
 	EzHub.TextLabel_6.Position = UDim2.new(0.268656731, 0, 0.555160224, 0)
 	EzHub.TextLabel_6.Size = UDim2.new(0, 213, 0, 43)
 	EzHub.TextLabel_6.Font = Enum.Font.SourceSans
-	EzHub.TextLabel_6.Text = "Discord: CEO of Africa#0591"
+	EzHub.TextLabel_6.Text = "Discord: reed192512"
 	EzHub.TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.TextLabel_6.TextSize = 18.000
 	EzHub.TextLabel_6.TextWrapped = true
@@ -645,7 +645,7 @@ do
 	EzHub.ImageLabel.BorderSizePixel = 0
 	EzHub.ImageLabel.Position = UDim2.new(0.411000013, 0, 0.400000006, 0)
 	EzHub.ImageLabel.Size = UDim2.new(0, 81, 0, 82)
-	EzHub.ImageLabel.Image = "http://www.roblox.com/asset/?id=5980933241"
+	EzHub.ImageLabel.Image = "http://www.roblox.com/asset/?id=15627596511"
 
 	EzHub.ImageLabel_2.Parent = EzHub.ImageLabel
 	EzHub.ImageLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
