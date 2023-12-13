@@ -386,7 +386,7 @@ Tabs.Settings:AddButton({
     ["Low Rendering"] = true, -- Lower Rendering
     ["Low Quality Parts"] = true -- Lower quality parts
 }
-loadstring(game:HttpGet("https://pastebin.com/raw/Wd75Z6GV"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/IntercomFps.txt"))()
     end
 })
 
