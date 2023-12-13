@@ -574,7 +574,7 @@ do
 	EzHub.LoadingBar_Roundify_12px.BackgroundTransparency = 1.000
 	EzHub.LoadingBar_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
 	EzHub.LoadingBar_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
-	EzHub.LoadingBar_Roundify_12px.Image = "rbxassetid://3570695787"
+	EzHub.LoadingBar_Roundify_12px.Image = "rbxassetid://15627596511"
 	EzHub.LoadingBar_Roundify_12px.ImageColor3 = Color3.fromRGB(18, 98, 159)
 	EzHub.LoadingBar_Roundify_12px.ScaleType = Enum.ScaleType.Slice
 	EzHub.LoadingBar_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
