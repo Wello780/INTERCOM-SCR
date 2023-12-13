@@ -490,9 +490,9 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
-EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
-EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["IntercomHub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["IntercomAdmin"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["IntercomLauncher"];
 
 if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
