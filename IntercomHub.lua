@@ -862,7 +862,7 @@ do
 	EzHub.Docs.Position = UDim2.new(0, 10, 0.5, 20)
 	EzHub.Docs.Size = UDim2.new(0, 110, 0, 28)
 	EzHub.Docs.Font = Enum.Font.SourceSans
-	EzHub.Docs.Text = "Docs"
+	EzHub.Docs.Text = "Website"
 	EzHub.Docs.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.Docs.TextSize = 14.000
 
@@ -2319,8 +2319,8 @@ EzHub.Docs.MouseButton1Click:Connect(function()
 	otherSectionButtonDebounce = false;
 
 	if setclipboard then
-		EzHub.Docs.Text = "Copied Docs...";
-		setclipboard("https://app.archbee.com/public/PTplYowLy93mKanJeS7F9");
+		EzHub.Docs.Text = "Copied Website...";
+		setclipboard("https://intercomsoftworks.mydurable.com/");
 		ezlib.newNotif(ezlib.enum.notifType.longText, "Copied to clipboard. Paste link in browser to view the docs...").play().delete();
 		wait(1);
 		EzHub.Docs.Text = oldTextDocs;
@@ -2337,7 +2337,7 @@ EzHub.Github.MouseButton1Click:Connect(function()
 	otherSectionButtonDebounce = false;
 
 	EzHub.Github.Text = "Copied";
-	pcall(function() setclipboard("https://github.com/debug420/Ez-Hub") end);
+	pcall(function() setclipboard("https://github.com/reed192512/INTERCOM-SCR") end);
 	wait(2);
 	EzHub.Github.Text = oldTextGithub;
 
