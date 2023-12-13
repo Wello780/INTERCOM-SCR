@@ -11,7 +11,7 @@
         "IntercomLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/IntercomHub.lua",
-    "Theme"
+    "Themes": {
         "Default": {
             "ThemeIndex": 1,
             "Primary": [41, 53, 68],
