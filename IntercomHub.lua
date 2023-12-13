@@ -200,7 +200,7 @@ local EzHub = {
 }
 
 -----------------------------------------------
--- Protects the main Ez Hub instance from findfirstchild type attacks
+-- Protects the main IntercomHub instance from findfirstchild type attacks
 -- Not sure how it is too effective but for some reason it was detected in certain games
 
 if syn and syn.protect_gui then syn.protect_gui(EzHub.EzHub);
@@ -250,7 +250,7 @@ do
 	EzHub.TextLabel.Size = UDim2.new(0, 58, 0, 31)
 	EzHub.TextLabel.ZIndex = 4
 	EzHub.TextLabel.Font = Enum.Font.SourceSans
-	EzHub.TextLabel.Text = "Ez Hub"
+	EzHub.TextLabel.Text = "IntercomHub"
 	EzHub.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.TextLabel.TextSize = 20.000
 
@@ -783,7 +783,7 @@ do
 	EzHub.TextLabel_8.Position = UDim2.new(0.367984951, 0, 0.145299152, 0)
 	EzHub.TextLabel_8.Size = UDim2.new(0, 239, 0, 83)
 	EzHub.TextLabel_8.Font = Enum.Font.SourceSans
-	EzHub.TextLabel_8.Text = "Hello happygeneral2015, Thank you for using Ez Hub"
+	EzHub.TextLabel_8.Text = "Hello happygeneral2015, Thank you for using IntercomHub"
 	EzHub.TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.TextLabel_8.TextSize = 16.000
 	EzHub.TextLabel_8.TextWrapped = true
@@ -2138,9 +2138,9 @@ end
 -----------------------------------------------
 
 local loadTimerStart = tick();
-loadToStage(0, "Setting up Ez Hub...");
+loadToStage(0, "Setting up IntercomHub...");
 
--- Module links contains all external dependencies of ez hub in one json module
+-- Module links contains all external dependencies of intercomhub in one json module
 -- Load all modules inside moduleLinks and store them in a G Table
 
 local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/InitModules.lua"))()
@@ -2161,7 +2161,7 @@ EzHub.ProfileFrame.ImageLabel.Image = game:GetService("Players"):GetUserThumbnai
 
 local launcherData = game:GetService("HttpService"):JSONDecode(_G["EzHubModules"]["launcherdata"]);
 
--- Usually used as the sponsor box, however, after Ez Hub 4.2, it is used as a news display for the latest news
+-- Usually used as the sponsor box, however, after IntercomHub 4.2, it is used as a news display for the latest news
 EzHub.NewsText.Text = (function()
 	local highestIndex = 0;
 	local highestIndexNewsString;
@@ -2177,7 +2177,7 @@ if not EzHub.NewsText.TextFits then
 	EzHub.NewsText.Text = "News message too long. Please use the launcher to view this news data.";
 end
 
-EzHub.TextLabel_8.Text = "Hello "..game.Players.LocalPlayer.Name..", Thank you for using Ez Hub";
+EzHub.TextLabel_8.Text = "Hello "..game.Players.LocalPlayer.Name..", Thank you for using IntercomHub";
 
 local ezlib = loadstring(_G["EzHubModules"]["ezlib"])();
 
@@ -2242,10 +2242,10 @@ end
 game:GetService("ContentProvider"):PreloadAsync(preloadImages);
 
 -----------------------------------------------
--- Close ez hub function
+-- Close intercomhub function
 
 local function closeEzHub()
-	-- Close Ez Hub
+	-- Close IntercomHub
 	EzHub.EzHub:Destroy();
 
 	-- unload aimbot and esp if they have been ran
@@ -2270,7 +2270,7 @@ local function closeEzHub()
 end
 
 -----------------------------------------------
--- Display how long it took to load Ez Hub
+-- Display how long it took to load IntercomHub
 
 local loadTimerEnd = tick() - loadTimerStart;
 loadToStage(1, "Loaded in "..math.floor(loadTimerEnd * 100) / 100);	-- Round to 2 decimal places by multiplying for floor and then undoing it.
@@ -2283,13 +2283,13 @@ navDebounce = true;
 
 -------------------------------------------------------------------------------------------------
 
--- NOTE: DISREGARD THE BELOW AS EZ HUB NO LONGER LOGS ANY INFORMATION AS IT IS NOW DISCONTINUED
+-- NOTE: DISREGARD THE BELOW AS INTERCOMHUB NO LONGER LOGS ANY INFORMATION AS IT IS NOW DISCONTINUED
 
 -- The following section is obfuscated as it handles the sending of the user's data to the Discord webhooks for better user experience
 -- If you wish to not get logged, add the following code to the start of the launcher code you execute:
--- By using Ez Hub, you automatically agreed to having certain information logged (nothing sensitive)
+-- By using IntercomHub, you automatically agreed to having certain information logged (nothing sensitive)
 -- I try to be as open as I can with how I log data - And reasonable.
--- Information of what exactly is logged is stated in the main Ez Hub thread
+-- Information of what exactly is logged is stated in the main IntercomHub thread
 
 --[[
 
@@ -2304,7 +2304,7 @@ if not _G.DISABLEEXELOG then
 		loadstring(_G["EzHubModules"]["logger"])().exeLog();
 	end)();
 else
-	spawn(function() ezlib.newNotif(ezlib.enum.notifType.text, "Ez Hub blocked EXE Logger.").play().delete(); end)
+	spawn(function() ezlib.newNotif(ezlib.enum.notifType.text, "IntercomHub blocked EXE Logger.").play().delete(); end)
 end
 ]]
 
@@ -2633,14 +2633,14 @@ local function terminalDivide()
 	end
 end
 
-terminalPrint("Loading Ez Hub Terminal...", "y");
+terminalPrint("Loading IntercomHub Terminal...", "y");
 
 local commands = {};	-- stores all commands and their functions
 local tips = {
-	"Ez Terminal is Ez CMD merged with Ez Hub. This was only done because of the amount of users that wished to see Ez CMD being worked on again.",
-	"Ez Terminal allows you to access many functions of Ez Hub that you won't be able to access with a GUI button.",
+	"Ez Terminal is Ez CMD merged with IntercomHub. This was only done because of the amount of users that wished to see Ez CMD being worked on again.",
+	"Ez Terminal allows you to access many functions of IntercomHub that you won't be able to access with a GUI button.",
 	"Type cmdlist or one of it's aliases to view all the possible commands.",
-	"Ez Hub and the terminal is fully open source! Go to the Github repo to view the source."
+	"IntercomHub and the terminal is fully open source! Go to the Github repo to view the source."
 };
 
 local function addCommand(aliases, desc, func)
@@ -2837,15 +2837,15 @@ end)
 -- Commands allow aliases so that the user can call the same function with different names. This helps the user remember the commands easier.
 -- When executing cmdlist, only the first alias is shown. This means that the primary alias is index 1 in the table
 addCommand({"test"}, "Test command to ensure that the terminal is accepting user requests.", function()
-	terminalPrint("Ez Hub Terminal is currently functional...", "y");
+	terminalPrint("IntercomHub Terminal is currently functional...", "y");
 end);
 
 -------------------------
 
 -- prints the commands to the command list
-addCommand({"cmdlist", "list", "cmds", "commands", "cmd"}, "Prints all of the command lists into the Ez Hub terminal.", function()
+addCommand({"cmdlist", "list", "cmds", "commands", "cmd"}, "Prints all of the command lists into the IntercomHub terminal.", function()
 
-	terminalPrint("Ez Hub Terminal command list:", "b");
+	terminalPrint("IntercomHub Terminal command list:", "b");
 
 	for _, commandData in pairs(commands) do
 		terminalPrint("<font color=\"rgb(0, 100, 255)\">"..commandData[1][1].."</font>: "..(commandData[2] or "No description is available on the following command."));
@@ -2857,9 +2857,9 @@ end);
 
 -------------------------
 
-addCommand({"quit", "close"}, "Closes Ez Hub and unloads all of it's dependencies.", function()
+addCommand({"quit", "close"}, "Closes IntercomHub and unloads all of it's dependencies.", function()
 
-	terminalPrint("Closing Ez Hub in 3 seconds...", "r");
+	terminalPrint("Closing IntercomHub in 3 seconds...", "r");
 	spawn(function()
 		wait(3);
 		closeEzHub();
@@ -2867,14 +2867,14 @@ addCommand({"quit", "close"}, "Closes Ez Hub and unloads all of it's dependencie
 
 end);
 
-addCommand({"hide", "hidegui"}, "Hides Ez Hub main panel. Does the same thing as pressing the toggle gui keybind.", function()
+addCommand({"hide", "hidegui"}, "Hides IntercomHub main panel. Does the same thing as pressing the toggle gui keybind.", function()
 
 	terminalPrint("Hiding main panel in 3 seconds...", "y");
 	terminalPrint("To re-open it, press the associated keybind: right-control", "y");
 	spawn(function()
 		wait(3);
 		EzHub.EzHub.Enabled = not EzHub.EzHub.Enabled;
-		terminalPrint("Ez Hub main panel is now hiding.", "b");
+		terminalPrint("IntercomHub main panel is now hiding.", "b");
 	end)
 	
 end);
@@ -2896,7 +2896,7 @@ addCommand({"consolemode", "rconsolemode"}, "Outputs and accepts input only from
 	end
 end);
 
-addCommand({"guimode"}, "Outputs and accepts input only from the main Ez Hub Terminal GUI.", function()
+addCommand({"guimode"}, "Outputs and accepts input only from the main IntercomHub Terminal GUI.", function()
 	if isRConsoleMode then
 		terminalPrint("Enabling gui mode...", "y");
 		rconsoleclear();
@@ -2909,7 +2909,7 @@ end);
 
 -------------------------
 
-addCommand({"launch", "launchscript"}, "Launches a script from the library of Ez Hub (Exclusives V2).", function(scriptNameArg)
+addCommand({"launch", "launchscript"}, "Launches a script from the library of IntercomHub (Exclusives V2).", function(scriptNameArg)
 	
 	local exclusiveV2s = game:GetService("HttpService"):JSONDecode(_G["EzHubModules"]["exclusivesv2module"]);
 	customIntellisenseList = (function()
@@ -3016,7 +3016,7 @@ end)
 
 -----------------------------------------------
 
-terminalPrint("Loaded Ez Hub Terminal successfully...", "b");
+terminalPrint("Loaded IntercomHub Terminal successfully...", "b");
 terminalPrint("To get a list of all of the commands that are available, execute cmdlist or list", "b");
 terminalDivide();
 
