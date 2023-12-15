@@ -663,7 +663,7 @@ do
 	EzHub.TextLabel_7.Position = UDim2.new(0.281449914, 0, 0.822064042, 0)
 	EzHub.TextLabel_7.Size = UDim2.new(0, 200, 0, 50)
 	EzHub.TextLabel_7.Font = Enum.Font.SourceSans
-	EzHub.TextLabel_7.Text = "Special thanks to 0_King_0#6336 for testing"
+	EzHub.TextLabel_7.Text = "This Script was made by EZ-INDUSTRIES and i modified it"
 	EzHub.TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.TextLabel_7.TextSize = 14.000
 
@@ -2143,7 +2143,7 @@ loadToStage(0, "Setting up IntercomHub...");
 -- Module links contains all external dependencies of intercomhub in one json module
 -- Load all modules inside moduleLinks and store them in a G Table
 
-local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/InitModules.lua"))()
+local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/Modules/InitModules.lua"))()
 	.init(function(moduleIndex, moduleNumber, moduleName)
 
 	loadToStage(math.clamp(((1 / moduleNumber) * moduleIndex), 0.1, 0.9),
