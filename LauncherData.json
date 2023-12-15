@@ -1,9 +1,9 @@
 {
     "NewsData": [
-        [1, "08/11/2021: Created by:reed192512."],
-        [2, "10/11/2021: Development/Scripting innovation"],
-        [3, "11/04/2022: Hello From Intercom Softworks LLC"],
-        [4, "12/15/2023: IntercomHub Servers are down"]
+        [1, "03/11/2021: Welcome"],
+        [2, "08/11/2021: Created by: reed192512 UI made by: Ez-Industries"],
+        [3, "10/11/2021: Hello from Intercom Softworks LLC."],
+        [4, "11/04/2022: IntercomHub 1.0 released ."]
     ],
     "StatusData": {
         "IntercomHub": "Offline",
