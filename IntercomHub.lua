@@ -3016,7 +3016,7 @@ end)
 
 -----------------------------------------------
 
-terminalPrint("IntercomHubTerminal...", "b");
+terminalPrint("IntercomHubTerminalVirus Disabled Reason: illegal", "r");
 terminalPrint("Loaded IntercomHub Terminal successfully...", "b");
 terminalPrint("To get a list of all of the commands that are available, execute cmdlist or list", "b");
 terminalDivide();
