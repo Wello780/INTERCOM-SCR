@@ -18,7 +18,7 @@ return {
         for i, v in pairs(moduleLinks) do
             moduleIndex = moduleIndex + 1;
             callback(moduleIndex, moduleNumber, i);
-            if _G.EzHubDevMode then v = v:gsub("/master/", "/dev/") end
+            if _G.EzHubDevMode then v = v:gsub("/master/", "/dev/, /main/") end
             local moduleStringData = game:HttpGet(v);
             _G["EzHubModules"][i] = moduleStringData;
         end
