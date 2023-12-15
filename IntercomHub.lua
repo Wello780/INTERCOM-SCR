@@ -2143,7 +2143,7 @@ loadToStage(0, "Setting up IntercomHub...");
 -- Module links contains all external dependencies of intercomhub in one json module
 -- Load all modules inside moduleLinks and store them in a G Table
 
-local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/main/Modules/InitModules.lua"))()
+local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/master/Modules/InitModules.lua"))()
 	.init(function(moduleIndex, moduleNumber, moduleName)
 
 	loadToStage(math.clamp(((1 / moduleNumber) * moduleIndex), 0.1, 0.9),
