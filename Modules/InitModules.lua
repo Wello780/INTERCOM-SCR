@@ -2,8 +2,8 @@
 return {
     init = function(callback)
         if callback == nil then callback = function() end end;
-        local moduleLinks = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Hub/"..
-        (_G.EzHubDevMode and "dev" or "master").."/Modules/Modules.json"));
+        local moduleLinks = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR"..
+        (_G.EzHubDevMode and "dev" or "master" or "main").."/Modules/Modules.json"));
 
         local moduleIndex = 0;
         local moduleNumber = (function()
