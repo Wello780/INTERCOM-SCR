@@ -2143,7 +2143,7 @@ loadToStage(0, "Setting up IntercomHub...");
 -- Module links contains all external dependencies of intercomhub in one json module
 -- Load all modules inside moduleLinks and store them in a G Table
 
-local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/master/Modules/InitModules.lua"))()
+local moduleLinks = loadstring(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/InitModules.lua"))()
 	.init(function(moduleIndex, moduleNumber, moduleName)
 
 	loadToStage(math.clamp(((1 / moduleNumber) * moduleIndex), 0.1, 0.9),
@@ -3016,6 +3016,7 @@ end)
 
 -----------------------------------------------
 
+terminalPrint("IntercomHubTerminal...", "b");
 terminalPrint("Loaded IntercomHub Terminal successfully...", "b");
 terminalPrint("To get a list of all of the commands that are available, execute cmdlist or list", "b");
 terminalDivide();
