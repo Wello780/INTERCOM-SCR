@@ -2,7 +2,7 @@
 return {
     init = function(callback)
         if callback == nil then callback = function() end end;
-        local moduleLinks = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR"..
+        local moduleLinks = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/reed192512/INTERCOM-SCR/"..
         (_G.EzHubDevMode and "dev" or "master").."/Modules/Modules.json"));
 
         local moduleIndex = 0;
