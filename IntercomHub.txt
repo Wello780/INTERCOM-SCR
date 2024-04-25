@@ -1,0 +1,23 @@
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/Wello78/INTERCOM-SCR/main/source.lua"))()
+
+local GUI = Mercury:Create{
+    Name = "IntercomHub",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://github.com/Wello780/INTERCOM-SCR"
+}
+
+local Tab = GUI:Tab{
+	Name = "Our Scripts",
+	Icon = "rbxassetid://8569322835"
+}
+
+local Tab = GUI:Tab{
+	Name = "Taken Scripts",
+	Icon = "rbxassetid://8569322835"
+}
+
+local Tab = GUI:Tab{
+	Name = "credits",
+	Icon = "rbxassetid://8569322835"
+}
