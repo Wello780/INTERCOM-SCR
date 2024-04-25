@@ -1,23 +1,37 @@
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/Wello78/INTERCOM-SCR/main/Source.lua"))()
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("IntercomHub", "Default")
 
-local GUI = Mercury:Create{
-    Name = "IntercomHub",
-    Size = UDim2.fromOffset(600, 400),
-    Theme = Mercury.Themes.Dark,
-    Link = "https://github.com/Wello780/INTERCOM-SCR"
+local tab = DrRayLibrary.newTab("Our Scripts", "ImageIdHere")
+
+tab.newButton("Car Crash System", "Kavo Ui", function()
+    loadsting(game:HttpGet("https://raw.githubusercontent.com/Wello780/Games/main/car%20crash%20system.txt"))()
+end)
+
+
+tab.newButton("Cart ride into Rdite", "Kavo Ui", function()
+    loadsting(game:HttpGet("https://raw.githubusercontent.com/Wello780/Games/main/cart%20ride%20into%20rdite.txt"))()
+end)
+
+local tab = DrRayLibrary.newTab("Taken Scripts", "ImageIdHere")
+
+tab.newButton("A Dusty Trip", "Unknown UI", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
+end)569322835"
 }
 
-local Tab = GUI:Tab{
-	Name = "Our Scripts",
-	Icon = "rbxassetid://8569322835"
-}
+tab.newButton("A Dusty Trip [Legend Handles]", "Rayfield and Kavo Ui, Key: DustyNewTrip82371283Best", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/trip/main/dusty"))()
+end)
 
-local Tab = GUI:Tab{
-	Name = "Taken Scripts",
-	Icon = "rbxassetid://8569322835"
-}
+local tab = DrRayLibrary.newTab("Settings", "ImageIdHere")
 
-local Tab = GUI:Tab{
-	Name = "credits",
-	Icon = "rbxassetid://8569322835"
+tab.newButton("Fps Booster", "Booster", function()
+    loadsting(game:HttpGet("https://raw.githubusercontent.com/Wello780/INTERCOM-SCR/main/IntercomFps.txt"))()
+end)
+
+GUI:Credit{
+	Name = "Wello890",
+	Description = "who made the script",
+	V3rm = "dont have one:<",
+	Discord = "wello890"
 }
