@@ -164,7 +164,7 @@ local NewGuiPart162 = Instance.new("BindableFunction")
 local NewGuiPart163 = Instance.new("BindableEvent")
 -- Properties
 
-NewGuiPart1.Name = "Dex"
+NewGuiPart1.Name = "Int"
 
 NewGuiPart2.Name = "PropertiesFrame"
 NewGuiPart2.Parent = NewGuiPart1
@@ -275,7 +275,7 @@ NewGuiPart9.Size = UDim2.new(0, 30, 0, 20)
 NewGuiPart9.ZIndex = 2
 NewGuiPart9.Font = Enum.Font.SourceSansBold
 NewGuiPart9.FontSize = Enum.FontSize.Size14
-NewGuiPart9.Text = "DEX"
+NewGuiPart9.Text = "INT"
 NewGuiPart9.TextWrapped = true
 
 NewGuiPart10.Name = "Version"
@@ -1258,7 +1258,7 @@ NewGuiPart107.Size = UDim2.new(0, 100, 0, 60)
 NewGuiPart107.ZIndex = 2
 NewGuiPart107.Font = Enum.Font.SourceSansBold
 NewGuiPart107.FontSize = Enum.FontSize.Size60
-NewGuiPart107.Text = "DEX"
+NewGuiPart107.Text = "INT"
 NewGuiPart107.TextWrapped = true
 
 NewGuiPart108.Name = "Version"
@@ -1270,7 +1270,7 @@ NewGuiPart108.Size = UDim2.new(0, 100, 0, 30)
 NewGuiPart108.ZIndex = 2
 NewGuiPart108.Font = Enum.Font.SourceSansBold
 NewGuiPart108.FontSize = Enum.FontSize.Size28
-NewGuiPart108.Text = "V2.0.0"
+NewGuiPart108.Text = "V0,0,1"
 NewGuiPart108.TextWrapped = true
 
 NewGuiPart109.Name = "Creator"
