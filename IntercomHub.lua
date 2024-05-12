@@ -212,7 +212,7 @@ elseif get_hidden_gui then EzHub.EzHub.Parent = get_hidden_gui(); end
 
 do
 
-	EzHub.EzHub.Name = "IntercomHub"
+	EzHub.EzHub.Name = "EzHub"
 	EzHub.EzHub.Parent = game.CoreGui
 
 	EzHub.MainFrame.Name = "MainFrame"
@@ -250,7 +250,7 @@ do
 	EzHub.TextLabel.Size = UDim2.new(0, 58, 0, 31)
 	EzHub.TextLabel.ZIndex = 4
 	EzHub.TextLabel.Font = Enum.Font.SourceSans
-	EzHub.TextLabel.Text = "Ez Hub"
+	EzHub.TextLabel.Text = "IntercomHub"
 	EzHub.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	EzHub.TextLabel.TextSize = 20.000
 
@@ -3085,3 +3085,4 @@ local function dragify(MainFrame)
 end
 
 dragify(EzHub.MainFrame);
+

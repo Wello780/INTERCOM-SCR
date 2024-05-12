@@ -57,7 +57,7 @@ local EzLauncher = {
 
 --Properties:
 
-EzLauncher.EzLauncher.Name = "IntercomLauncher"
+EzLauncher.EzLauncher.Name = "EzLauncher"
 EzLauncher.EzLauncher.Parent = game.CoreGui
 EzLauncher.EzLauncher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -140,7 +140,7 @@ EzLauncher.StatusName.BackgroundTransparency = 1.000
 EzLauncher.StatusName.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName.Font = Enum.Font.SourceSans
-EzLauncher.StatusName.Text = "Ez Hub"
+EzLauncher.StatusName.Text = "IntercomHub"
 EzLauncher.StatusName.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName.TextSize = 14.000
 
@@ -172,7 +172,7 @@ EzLauncher.StatusName_2.BackgroundTransparency = 1.000
 EzLauncher.StatusName_2.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName_2.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName_2.Font = Enum.Font.SourceSans
-EzLauncher.StatusName_2.Text = "Ez API"
+EzLauncher.StatusName_2.Text = "Intercom API"
 EzLauncher.StatusName_2.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName_2.TextSize = 14.000
 
@@ -204,7 +204,7 @@ EzLauncher.StatusName_3.BackgroundTransparency = 1.000
 EzLauncher.StatusName_3.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName_3.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName_3.Font = Enum.Font.SourceSans
-EzLauncher.StatusName_3.Text = "Ez Launcher"
+EzLauncher.StatusName_3.Text = "Intercom Launcher"
 EzLauncher.StatusName_3.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName_3.TextSize = 14.000
 
