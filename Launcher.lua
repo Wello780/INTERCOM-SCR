@@ -204,7 +204,7 @@ EzLauncher.StatusName_3.BackgroundTransparency = 1.000
 EzLauncher.StatusName_3.Position = UDim2.new(0.5, 0, 0.5, -12)
 EzLauncher.StatusName_3.Size = UDim2.new(0, 50, 0, 30)
 EzLauncher.StatusName_3.Font = Enum.Font.SourceSans
-EzLauncher.StatusName_3.Text = "Intercom Launcher"
+EzLauncher.StatusName_3.Text = "IntercomLauncher"
 EzLauncher.StatusName_3.TextColor3 = Color3.fromRGB(92, 106, 124)
 EzLauncher.StatusName_3.TextSize = 14.000
 
@@ -490,9 +490,9 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
-EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
-EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["IntercomHub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["Intercom API"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["IntercomLauncher"];
 
 if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
