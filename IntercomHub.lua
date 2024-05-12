@@ -2633,14 +2633,14 @@ local function terminalDivide()
 	end
 end
 
-terminalPrint("Loading Ez Hub Terminal...", "y");
+terminalPrint("Loading IntercomHub Terminal...", "y");
 
 local commands = {};	-- stores all commands and their functions
 local tips = {
-	"Ez Terminal is Ez CMD merged with Ez Hub. This was only done because of the amount of users that wished to see Ez CMD being worked on again.",
-	"Ez Terminal allows you to access many functions of Ez Hub that you won't be able to access with a GUI button.",
+	"Intercom Terminal is Intercom CMD merged with IntercomHub. This was only done because of the amount of users that wished to see Intercom CMD being worked on again.",
+	"Intercom Terminal allows you to access many functions of Ez Hub that you won't be able to access with a GUI button.",
 	"Type cmdlist or one of it's aliases to view all the possible commands.",
-	"Ez Hub and the terminal is fully open source! Go to the Github repo to view the source."
+	"IntercomHub and the terminal is fully open source! Go to the Github repo to view the source."
 };
 
 local function addCommand(aliases, desc, func)
@@ -2837,7 +2837,7 @@ end)
 -- Commands allow aliases so that the user can call the same function with different names. This helps the user remember the commands easier.
 -- When executing cmdlist, only the first alias is shown. This means that the primary alias is index 1 in the table
 addCommand({"test"}, "Test command to ensure that the terminal is accepting user requests.", function()
-	terminalPrint("Ez Hub Terminal is currently functional...", "y");
+	terminalPrint("IntercomHub Terminal is currently functional...", "y");
 end);
 
 -------------------------
@@ -2845,7 +2845,7 @@ end);
 -- prints the commands to the command list
 addCommand({"cmdlist", "list", "cmds", "commands", "cmd"}, "Prints all of the command lists into the Ez Hub terminal.", function()
 
-	terminalPrint("Ez Hub Terminal command list:", "b");
+	terminalPrint("IntercomHub Terminal command list:", "b");
 
 	for _, commandData in pairs(commands) do
 		terminalPrint("<font color=\"rgb(0, 100, 255)\">"..commandData[1][1].."</font>: "..(commandData[2] or "No description is available on the following command."));
@@ -2874,7 +2874,7 @@ addCommand({"hide", "hidegui"}, "Hides Ez Hub main panel. Does the same thing as
 	spawn(function()
 		wait(3);
 		EzHub.EzHub.Enabled = not EzHub.EzHub.Enabled;
-		terminalPrint("Ez Hub main panel is now hiding.", "b");
+		terminalPrint("Intercom Hub main panel is now hiding.", "b");
 	end)
 	
 end);
