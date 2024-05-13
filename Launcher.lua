@@ -490,9 +490,9 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.Status.Text = statusData["IntercomHub"];
-EzLauncher.EzAPIStatusFrame.Status.Text = statusData["Intercom API"];
-EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["IntercomLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
 
 if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
@@ -641,4 +641,4 @@ local function dragify(MainFrame)
 end
 
 dragify(EzLauncher.EzLauncher.Frame);
-er.Frame);
+
