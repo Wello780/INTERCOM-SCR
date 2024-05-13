@@ -490,9 +490,9 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
-EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
-EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["IntercomHub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["Intercom API"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["IntercomLauncher"];
 
 if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
@@ -549,7 +549,8 @@ end)
 --------------------------------------------------------------------
 -- Apply the launcher data: latest version
 
--- List of accouonts that can launch Ez Hub regardless of the status
+-- List of accouonts that can launch 
+ regardless of the status
 -- Note that the status is just to prevent users from executing Ez Hub when it is in testing/broken stages
 -- Therefore there is no need for any type of secure whitelist
 local allowedOverrideUsers = {
