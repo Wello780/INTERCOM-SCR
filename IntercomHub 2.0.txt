@@ -99,7 +99,7 @@ Converted["_YARHM"].Name = "YARHM"
 Converted["_YARHM"].Parent = game:GetService("CoreGui")
 
 Converted["_Open"].Font = Enum.Font.Gotham
-Converted["_Open"].Text = "Triple-click this region to open IntercomHub."
+Converted["_Open"].Text = "Triple-click this region to open Intercom."
 Converted["_Open"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Open"].TextSize = 14
 Converted["_Open"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -127,7 +127,7 @@ Converted["_Menu"].Parent = Converted["_YARHM"]
 Converted["_UICorner1"].Parent = Converted["_Menu"]
 
 Converted["_HubName"].Font = Enum.Font.GothamBold
-Converted["_HubName"].Text = "IntercomHub"
+Converted["_HubName"].Text = "Intercom"
 Converted["_HubName"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubName"].TextScaled = true
 Converted["_HubName"].TextSize = 14
@@ -216,7 +216,7 @@ Converted["_UIGradient1"].Rotation = -44
 Converted["_UIGradient1"].Parent = Converted["_UIStroke"]
 
 Converted["_HubCredits"].Font = Enum.Font.GothamBold
-Converted["_HubCredits"].Text = "made and open sourced by Intercom"
+Converted["_HubCredits"].Text = "made and open sourced by intercom"
 Converted["_HubCredits"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubCredits"].TextScaled = true
 Converted["_HubCredits"].TextSize = 14
@@ -278,7 +278,7 @@ Converted["_TextLabel"].Size = UDim2.new(0, 200, 0, 50)
 Converted["_TextLabel"].Parent = Converted["_Area"]
 
 Converted["_TextLabel1"].Font = Enum.Font.GothamBold
-Converted["_TextLabel1"].Text = "IntercomHub"
+Converted["_TextLabel1"].Text = "Intercom"
 Converted["_TextLabel1"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel1"].TextScaled = true
 Converted["_TextLabel1"].TextSize = 14
