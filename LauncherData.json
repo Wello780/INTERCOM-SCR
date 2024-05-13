@@ -6,8 +6,8 @@
         [4, "11/04/2022: IntercomHub 1.0 released ."]
     ],
     "StatusData": {
-        "IntercomHub": "Offline",
-        "IntercomAdmin": "Online",
+        "IntercomHub": "Online",
+        "Intercom API": "Online",
         "IntercomLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/Wello780/INTERCOM-SCR/main/IntercomHub.lua",
