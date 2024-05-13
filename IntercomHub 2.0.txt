@@ -1194,7 +1194,7 @@ local function GIGHQO_fake_script() -- Fake Script: StarterGui.YARHM.Init
 	
 	_G.Modules = {}
 	
-	require(script.Parent.FUNCTIONS).notification("Thanks for using YARHM! To use this hub, triple-click/tap the top region of your screen.")
+	require(script.Parent.FUNCTIONS).notification("Thanks for using Intercom! To use this hub, triple-click/tap the top region of your screen.")
 	require(script.Parent.FUNCTIONS).notification("v1.8\n- Added a way to add custom module through raw link\n- Changed how the general UI looked")
 end
 local function RMKEEKN_fake_script() -- Fake Script: StarterGui.YARHM.Flee the Facility
