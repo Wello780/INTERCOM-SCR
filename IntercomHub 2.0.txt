@@ -1549,7 +1549,7 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 	
 	module[4] = {
 		Type = "Button",
-		Args = {"Move YARHM trigger to the bottom", function(Self)
+		Args = {"Move Intercom trigger to the bottom", function(Self)
 			_G.YARHM.Open.UIStroke.Transparency = 0
 			_G.YARHM.Open.TextTransparency = 0
 			ts:Create(_G.YARHM.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
@@ -1567,7 +1567,7 @@ local function CSGP_fake_script() -- Fake Script: StarterGui.YARHM.Universal
 	
 	module[5] = {
 		Type = "Button",
-		Args = {"Move YARHM trigger to the top", function(Self)
+		Args = {"Move Intercom trigger to the top", function(Self)
 			_G.YARHM.Open.UIStroke.Transparency = 0
 			_G.YARHM.Open.TextTransparency = 0
 			ts:Create(_G.YARHM.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
