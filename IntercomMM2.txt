@@ -33,7 +33,7 @@ local vim = game:GetService('VirtualInputManager');
    
    local win = DiscordLib:Window("Murder Mystery 2")
    
-   local serv = win:Server("IntercomHub","http://www.roblox.com/asset/?id=6031075938")
+   local serv = win:Server("Intercom","http://www.roblox.com/asset/?id=6031075938")
    function Notify(Title, Text, ButtonText)
      DiscordLib:Notification(Title, Text, ButtonText)
    end
@@ -96,36 +96,6 @@ local vim = game:GetService('VirtualInputManager');
     local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
    
     module:Teleport(game.PlaceId)
-   end)
-   Button(Main, "Teleport to murderer", function()
-local function findMurderer()
-		for _, i in ipairs(game.Players:GetPlayers()) do
-			if i.Backpack:FindFirstChild("Knife") then
-				return i
-			end
-		end
-	
-		for _, i in ipairs(game.Players:GetPlayers()) do
-			if i.Character:FindFirstChild("Knife") then
-				return i
-			end
-		end
-	
-		return nil
-	end
-	
-	local function findSheriff()
-		for _, i in ipairs(game.Players:GetPlayers()) do
-			if i.Backpack:FindFirstChild("Gun") then
-				return i
-			end
-		end
-	
-		for _, i in ipairs(game.Players:GetPlayers()) do
-			if i.Character:FindFirstChild("Gun") then
-				return i
-			end
-		end
    end)
    Button(Main2, 'Remove lights', function()
     workspace.Normal.Map.Parts.Light:ClearAllChildren()
