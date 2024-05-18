@@ -216,7 +216,7 @@ Converted["_UIGradient1"].Rotation = -44
 Converted["_UIGradient1"].Parent = Converted["_UIStroke"]
 
 Converted["_HubCredits"].Font = Enum.Font.GothamBold
-Converted["_HubCredits"].Text = "made and open sourced by intercom"
+Converted["_HubCredits"].Text = "made by: Wello780/Wello890"
 Converted["_HubCredits"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubCredits"].TextScaled = true
 Converted["_HubCredits"].TextSize = 14
@@ -2115,3 +2115,4 @@ coroutine.wrap(CSGP_fake_script)()
 coroutine.wrap(LOAOODV_fake_script)()
 coroutine.wrap(INPG_fake_script)()
 coroutine.wrap(BOCLRJC_fake_script)()
+ipt)()
