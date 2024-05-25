@@ -1,52 +1,18 @@
 --[[
 
-Sirius
+Intercom
 
-© 2024 Sirius 
+© 2024 Intercom
 All Rights Reserved.
 
 --]]
 
-
---[[
-
-Sirius Pre-Hyperion Todo List
-
-High Priority
- - Invisible, Godmode
- - All Scripts buttons and Universal scripts
- - Chat Spam Detection
- - Custom Script Prompts
- - Player Kill, Spectate and ESP via Playerlist
- - http.request support for Sirius Intelligent HTTP Interception
- - Performance Improvements to Roblox itself
- 
-Moderate Priority
- - Spectate Animation, like GTA serverhop, tween to high in the sky, then tween to other player's head
- - Chat Spy Tracking: Follows who they're whispering to based on original message
- - Starlight 
- - Chatlogs
- - GTA Serverhop
- - Anti-Spam (chat) formula, based on text length, caps, emojis etc.
- - Reduce any form of detection of Sirius
- - Automated lowering of graphics on lower FPS, ensure no false positives
- 
-Potential Future Setting Options
- - Block entire domain or just the specific page in the Sirius Intelligent Flow Interception. Do this on case by case, e.g blocked = {"link.com", true} - true being whether its the domain or not
- - Serverhop type (default/gta)
- - Hook Specific Functions to reduce the need for external scripts
- 
---]]
-
--- Ensure the game is loaded 
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
--- Check License Tier
-local Pro = true -- We're open sourced now!
+local Pro = true
 
--- Create Variables for Roblox Services
 local coreGui = game:GetService("CoreGui")
 local httpService = game:GetService("HttpService")
 local lighting = game:GetService("Lighting")
@@ -387,13 +353,13 @@ local siriusValues = {
 local siriusSettings = {
 	{
 		name = 'General',
-		description = 'The general settings for Sirius, from simple to unique features.',
+		description = 'The general settings for INTCM, from simple to unique features.',
 		color = Color3.new(0.117647, 0.490196, 0.72549),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
 				name = 'Anonymous Client',
-				description = 'Randomise your username in real-time in any CoreGui parented interface, including Sirius. You will still appear as your actual name to others in-game. This setting can be performance intensive.',
+				description = 'Randomise your username in real-time in any CoreGui parented interface, including INTCM. You will still appear as your actual name to others in-game. This setting can be performance intensive.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -401,7 +367,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Chat Spy',
-				description = 'This will only work on the legacy Roblox chat system. Sirius will display whispers usually hidden from you in the chat box.',
+				description = 'This will only work on the legacy Roblox chat system. INTCM will display whispers usually hidden from you in the chat box.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -417,7 +383,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Now Playing Notifications',
-				description = 'When active, Sirius will notify you when the next song in your Music queue plays.',
+				description = 'When active, INTCM will notify you when the next song in your Music queue plays.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -454,7 +420,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Client-Based Anti Kick',
-				description = 'Cancel any kick request involving you sent by the client. This may prompt detection from Adonis or similar anti-cheats. You will need to rejoin and re-run Sirius to toggle.',
+				description = 'Cancel any kick request involving you sent by the client. This may prompt detection from Adonis or similar anti-cheats. You will need to rejoin and re-run INTCM to toggle.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -471,7 +437,7 @@ local siriusSettings = {
 	},
 	{
 		name = 'Keybinds',
-		description = 'Assign keybinds to actions or change keybinds such as the one to open/close Sirius.',
+		description = 'Assign keybinds to actions or change keybinds such as the one to open/close INTCM.',
 		color = Color3.new(0.0941176, 0.686275, 0.509804),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -605,13 +571,13 @@ local siriusSettings = {
 	},
 	{
 		name = 'Performance',
-		description = 'Tweak and test your performance settings for Roblox in Sirius.',
+		description = 'Tweak and test your performance settings for Roblox in INTCM.',
 		color = Color3.new(1, 0.376471, 0.168627),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
 				name = 'Artificial FPS Limit',
-				description = 'Sirius will automatically set your FPS to this number when you are tabbed-in to Roblox.',
+				description = 'INTCM will automatically set your FPS to this number when you are tabbed-in to Roblox.',
 				settingType = 'Number',
 				values = {20, 5000},
 				current = 240,
@@ -620,7 +586,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Limit FPS while unfocused',
-				description = 'Sirius will automatically set your FPS to 60 when you tab-out or unfocus from Roblox.',
+				description = 'INTCM will automatically set your FPS to 60 when you tab-out or unfocus from Roblox.',
 				settingType = 'Boolean', -- number for the cap below!! with min and max val
 				current = true,
 
@@ -628,7 +594,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Adaptive Latency Warning',
-				description = 'Sirius will check your average latency in the background and notify you if your current latency significantly goes above your average latency.',
+				description = 'INTCM will check your average latency in the background and notify you if your current latency significantly goes above your average latency.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -636,7 +602,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Adaptive Performance Warning',
-				description = 'Sirius will check your average FPS in the background and notify you if your current FPS goes below a specific number.',
+				description = 'INTCM will check your average FPS in the background and notify you if your current FPS goes below a specific number.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -646,7 +612,7 @@ local siriusSettings = {
 	},
 	{
 		name = 'Detections',
-		description = 'Sirius detects and prevents anything malicious or possibly harmful to your wellbeing.',
+		description = 'INTCM detects and prevents anything malicious or possibly harmful to your wellbeing.',
 		color = Color3.new(0.705882, 0, 0),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -671,7 +637,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Moderator Detection',
-				description = 'Be notified whenever Sirius detects a player joins your session that could be a game moderator.',
+				description = 'Be notified whenever INTCM detects a player joins your session that could be a game moderator.',
 				settingType = 'Boolean', 
 				minimumLicense = 'Pro',
 				current = true,
@@ -1356,7 +1322,7 @@ local function checkLastVersion()
 	local lastVersion = isfile and isfile(siriusValues.siriusFolder.."/".."version.srs") and readfile(siriusValues.siriusFolder.."/".."version.srs") or nil
 
 	if lastVersion then
-		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Intercom has been updated", "Intercom has been updated to version "..siriusValues.siriusVersion..", check our Discord for all new features and changes.", 4400701828)  end
+		if lastVersion ~= siriusValues.siriusVersion then queueNotification("Sirius has been updated", "Sirius has been updated to version "..siriusValues.siriusVersion..", check our Discord for all new features and changes.", 4400701828)  end
 	end
 
 	if writefile then writefile(siriusValues.siriusFolder.."/".."version.srs", siriusValues.siriusVersion) end
@@ -1410,7 +1376,7 @@ end
 local function addToQueue(file)
 	if not getcustomasset then return end
 	checkFolder()
-	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("Unable to locate file", "Please ensure that your audio file is in the Sirius/Music folder and that you are including the file extension (e.g mp3 or ogg).", 4370341699) return end
+	if not isfile(siriusValues.siriusFolder.."/Music/"..file) then queueNotification("Unable to locate file", "Please ensure that your audio file is in the Intercom/Music folder and that you are including the file extension (e.g mp3 or ogg).", 4370341699) return end
 	musicPanel.AddBox.Input.Text = ""
 
 	local newAudio = musicPanel.Queue.List.Template:Clone()
@@ -1736,7 +1702,7 @@ local function sortActions()
 			end)
 
 			if not success then
-				queueNotification("Action Error", "This action ('"..(action.name).."') had an error while running, please report this to the Sirius team at sirius.menu/discord", 4370336704)
+				queueNotification("Action Error", "This action ('"..(action.name).."') had an error while running, please report this to the Sirius team at discord.gg/scriptsqp", 4370336704)
 				action.enabled = false
 				newAction.Icon.Image = "rbxassetid://"..action.images[2]
 				tweenService:Create(newAction, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0.55}):Play()
@@ -2795,7 +2761,7 @@ if Essential or Pro then
 	getgenv()[index] = function(data)
 		if checkSirius() and checkSetting("Intelligent HTTP Interception").current then
 			local title = "Do you trust this source?"
-			local content = "Intercom has prevented data from being sent off-client, would you like to allow data to be sent or retrieved from this source?"
+			local content = "Sirius has prevented data from being sent off-client, would you like to allow data to be sent or retrieved from this source?"
 			local url = data.Url or "Unknown Link"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.764706, 0.305882, 0.0941176))})
 			local actions = {{"Always Allow", true, true}, {"Allow just this once", true}, {"Don't Allow", false}}
@@ -2805,7 +2771,7 @@ if Essential or Pro then
 
 				if bodyDecoded.cmd == "INVITE_BROWSER" then
 					title = "Would you like to join this Discord server?"
-					content = "Intercom has prevented your Discord client from automatically joining this Discord server, would you like to continue and join, or block it?"
+					content = "Sirius has prevented your Discord client from automatically joining this Discord server, would you like to continue and join, or block it?"
 					url = bodyDecoded.args and "discord.gg/"..bodyDecoded.args.code or "Unknown Invite"
 					gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.345098, 0.396078, 0.94902))})
 					actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -2828,7 +2794,7 @@ if Essential or Pro then
 	getgenv()[indexSetClipboard] = function(data)
 		if checkSirius() and checkSetting("Intelligent Clipboard Interception").current then
 			local title = "Would you like to copy this to your clipboard?"
-			local content = "Intercom has prevented a script from setting the below text to your clipboard, would you like to allow this, or prevent it from copying?"
+			local content = "Sirius has prevented a script from setting the below text to your clipboard, would you like to allow this, or prevent it from copying?"
 			local url = data or "Unknown Clipboard"
 			local gradient = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.611765, 0.529412))})
 			local actions = {{"Allow", true}, {"Don't Allow", false}}
@@ -3750,7 +3716,7 @@ local function initialiseAntiKick()
 
 			originalIndex = hookmetamethod(game, "__index", function(self, method)
 				if self == localPlayer and method:lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("Kick Prevented", "Intercom has prevented you from being kicked by the client.", 4400699701)
+					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
 					return error("Expected ':' not '.' calling member function Kick", 2)
 				end
 				return originalIndex(self, method)
@@ -3758,7 +3724,7 @@ local function initialiseAntiKick()
 
 			originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
 				if self == localPlayer and getnamecallmethod():lower() == "kick" and checkSetting("Client-Based Anti Kick").current and checkSirius() then
-					queueNotification("Kick Prevented", "Intercom has prevented you from being kicked by the client.", 4400699701)
+					queueNotification("Kick Prevented", "Sirius has prevented you from being kicked by the client.", 4400699701)
 					return
 				end
 				return originalNamecall(self, ...)
@@ -3814,7 +3780,7 @@ local function start()
 	end
 
 	if script_key and not Essential and not Pro then
-		queueNotification("License Error", "We've detected a key being placed above Intercom loadstring, however your key seems to be invalid. Make a support request at discord.gg/scriptsqp to get this solved within minutes.", "document-minus")
+		queueNotification("License Error", "We've detected a key being placed above Sirius loadstring, however your key seems to be invalid. Make a support request at discord.gg/scriptsqp to get this solved within minutes.", "document-minus")
 	end
 
 	if siriusValues.enableExperienceSync then
@@ -3953,7 +3919,7 @@ end)
 
 homeContainer.Interactions.Discord.Interact.MouseButton1Click:Connect(function()
 	if setclipboard then 
-		originalSetClipboard("https://discord.gg/scriptsqp")
+		originalSetClipboard("discord.gg/scriptsqp")
 		queueNotification("Discord Invite Copied", "We've set your clipboard to the Intercom discord invite.", 4335479121)
 	else
 		queueNotification("Unable to copy Discord invite", "Missing setclipboard() function, can't set data to your clipboard.", 4335479658)
@@ -4603,6 +4569,46 @@ while task.wait(1) do
 
 		if siriusValues.frameProfile.frameNotificationCooldown > 0 then
 			siriusValues.frameProfile.frameNotificationCooldown -= 1
+		end
+	end
+endationCooldown -= 1
+		end
+	end
+endmeProfile.frameNotificationCooldown > 0 then
+			siriusValues.frameProfile.frameNotificationCooldown -= 1
+		end
+	end
+endend
+	end
+endloads on your machine.", 4370305588)
+					siriusValues.pingProfile.pingNotificationCooldown = 120
+				end
+			end
+		end
+
+		if siriusValues.pingProfile.pingNotificationCooldown > 0 then
+			siriusValues.pingProfile.pingNotificationCooldown -= 1
+		end
+
+		-- Adaptive frame time checks
+		if siriusValues.frameProfile.frameNotificationCooldown <= 0 then
+			if #siriusValues.frameProfile.fpsQueue > 0 then
+				local avgFPS = siriusValues.frameProfile.totalFPS / #siriusValues.frameProfile.fpsQueue
+
+				if avgFPS < siriusValues.frameProfile.lowFPSThreshold then
+					if checkSetting("Adaptive Performance Warning").current then
+						queueNotification("Degraded Performance","We've noticed your client's frames per second have decreased. Consider checking for any background tasks or programs on your machine.", 4384400106)
+						siriusValues.frameProfile.frameNotificationCooldown = 120	
+					end
+				end
+			end
+		end
+
+		if siriusValues.frameProfile.frameNotificationCooldown > 0 then
+			siriusValues.frameProfile.frameNotificationCooldown -= 1
+		end
+	end
+endn -= 1
 		end
 	end
 end
