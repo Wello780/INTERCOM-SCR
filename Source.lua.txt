@@ -353,13 +353,13 @@ local siriusValues = {
 local siriusSettings = {
 	{
 		name = 'General',
-		description = 'The general settings for INTCM, from simple to unique features.',
+		description = 'The general settings for INTCMH, from simple to unique features.',
 		color = Color3.new(0.117647, 0.490196, 0.72549),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
 				name = 'Anonymous Client',
-				description = 'Randomise your username in real-time in any CoreGui parented interface, including INTCM. You will still appear as your actual name to others in-game. This setting can be performance intensive.',
+				description = 'Randomise your username in real-time in any CoreGui parented interface, including INTCMH. You will still appear as your actual name to others in-game. This setting can be performance intensive.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -367,7 +367,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Chat Spy',
-				description = 'This will only work on the legacy Roblox chat system. INTCM will display whispers usually hidden from you in the chat box.',
+				description = 'This will only work on the legacy Roblox chat system. INTCMH will display whispers usually hidden from you in the chat box.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -383,7 +383,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Now Playing Notifications',
-				description = 'When active, INTCM will notify you when the next song in your Music queue plays.',
+				description = 'When active, INTCMH will notify you when the next song in your Music queue plays.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -420,7 +420,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Client-Based Anti Kick',
-				description = 'Cancel any kick request involving you sent by the client. This may prompt detection from Adonis or similar anti-cheats. You will need to rejoin and re-run INTCM to toggle.',
+				description = 'Cancel any kick request involving you sent by the client. This may prompt detection from Adonis or similar anti-cheats. You will need to rejoin and re-run INTCMH to toggle.',
 				settingType = 'Boolean',
 				current = false,
 
@@ -437,7 +437,7 @@ local siriusSettings = {
 	},
 	{
 		name = 'Keybinds',
-		description = 'Assign keybinds to actions or change keybinds such as the one to open/close INTCM.',
+		description = 'Assign keybinds to actions or change keybinds such as the one to open/close INTCMH.',
 		color = Color3.new(0.0941176, 0.686275, 0.509804),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -571,13 +571,13 @@ local siriusSettings = {
 	},
 	{
 		name = 'Performance',
-		description = 'Tweak and test your performance settings for Roblox in INTCM.',
+		description = 'Tweak and test your performance settings for Roblox in INTCMH.',
 		color = Color3.new(1, 0.376471, 0.168627),
 		minimumLicense = 'Free',
 		categorySettings = {
 			{
 				name = 'Artificial FPS Limit',
-				description = 'INTCM will automatically set your FPS to this number when you are tabbed-in to Roblox.',
+				description = 'INTCMH will automatically set your FPS to this number when you are tabbed-in to Roblox.',
 				settingType = 'Number',
 				values = {20, 5000},
 				current = 240,
@@ -586,7 +586,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Limit FPS while unfocused',
-				description = 'INTCM will automatically set your FPS to 60 when you tab-out or unfocus from Roblox.',
+				description = 'INTCMH will automatically set your FPS to 60 when you tab-out or unfocus from Roblox.',
 				settingType = 'Boolean', -- number for the cap below!! with min and max val
 				current = true,
 
@@ -594,7 +594,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Adaptive Latency Warning',
-				description = 'INTCM will check your average latency in the background and notify you if your current latency significantly goes above your average latency.',
+				description = 'INTCMH will check your average latency in the background and notify you if your current latency significantly goes above your average latency.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -602,7 +602,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Adaptive Performance Warning',
-				description = 'INTCM will check your average FPS in the background and notify you if your current FPS goes below a specific number.',
+				description = 'INTCMH will check your average FPS in the background and notify you if your current FPS goes below a specific number.',
 				settingType = 'Boolean',
 				current = true,
 
@@ -612,7 +612,7 @@ local siriusSettings = {
 	},
 	{
 		name = 'Detections',
-		description = 'INTCM detects and prevents anything malicious or possibly harmful to your wellbeing.',
+		description = 'INTCMH detects and prevents anything malicious or possibly harmful to your wellbeing.',
 		color = Color3.new(0.705882, 0, 0),
 		minimumLicense = 'Free',
 		categorySettings = {
@@ -637,7 +637,7 @@ local siriusSettings = {
 			},
 			{
 				name = 'Moderator Detection',
-				description = 'Be notified whenever INTCM detects a player joins your session that could be a game moderator.',
+				description = 'Be notified whenever INTCMH detects a player joins your session that could be a game moderator.',
 				settingType = 'Boolean', 
 				minimumLicense = 'Pro',
 				current = true,
@@ -4571,7 +4571,7 @@ while task.wait(1) do
 			siriusValues.frameProfile.frameNotificationCooldown -= 1
 		end
 	end
-endationCooldown -= 1
+end -= 1
 		end
 	end
 endmeProfile.frameNotificationCooldown > 0 then
